@@ -29,7 +29,12 @@ app.configure('production', function(){
 
 // Routes
 
+function serve_start(req, res) {
+  res.render('start', {title:'Express', name:'Josefa'});
+};
+
 app.get('/', routes.index);
+app.get('/start', serve_start);
 
 app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
